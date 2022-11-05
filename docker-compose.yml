@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  apache:
+    image: php:7.1-apache
+    container_name: apache-web
+    ports:
+      - "8013:80"
+    volumes:
+      - /data/servidor-web:/var/www/html/
+    networks:
+      - minha-rede
+networks:
+  minha-rede:
+    driver: bridge
+
